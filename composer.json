@@ -1,0 +1,24 @@
+{
+    "name": "zquintana/laravel-modules",
+    "description": "Adds Modules to Laravel.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zachary Quintana",
+            "homepage": "https://github.com/zquintana/LaravelModules"
+        }
+    ],
+    "require": {
+        "php": "~7.0|~7.1",
+    },
+    "require-dev": {
+        "illuminate/container": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x",
+    },
+    "autoload": {
+        "psr-4": {
+            "ZQuintana\\LaravelModules\\Tests\\": "tests",
+            "ZQuintana\\LaravelModules\\": "src"
+        }
+    }
+}
