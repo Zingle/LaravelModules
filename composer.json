@@ -19,6 +19,9 @@
         "psr-4": {
             "ZQuintana\\LaravelModules\\Tests\\": "tests",
             "ZQuintana\\LaravelModules\\": "src"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     }
 }

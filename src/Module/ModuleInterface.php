@@ -17,13 +17,6 @@ interface ModuleInterface
     public function getProviders(): array;
 
     /**
-     * Name of the module
-     *
-     * @return string
-     */
-    public function getName(): string;
-
-    /**
      * Register callback
      *
      * @param Application $app
@@ -37,4 +30,22 @@ interface ModuleInterface
      * @return string
      */
     public function getPath(): string;
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    public function getExtraPath(string $path): string;
+
+    /**
+     * Name of the module
+     *
+     * @return string
+     */
+    public function getName(): string;
+
+    /**
+     * @return string
+     */
+    public function getNamespace(): string;
 }

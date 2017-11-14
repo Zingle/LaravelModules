@@ -19,6 +19,11 @@ abstract class Module implements ModuleInterface
      */
     private $name;
 
+    /**
+     * @var string
+     */
+    private $namespace;
+
 
     /**
      * {@inheritdoc}
@@ -38,7 +43,7 @@ abstract class Module implements ModuleInterface
     /**
      * {@inheritdoc}
      */
-    public function getPath(): string
+    final public function getPath(): string
     {
         if (null === $this->path) {
             $reflected = new \ReflectionObject($this);
@@ -46,6 +51,15 @@ abstract class Module implements ModuleInterface
         }
 
         return $this->path;
+    }
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    final public function getExtraPath(string $path): string
+    {
+        return $this->getPath().$path;
     }
 
     /**
@@ -58,5 +72,18 @@ abstract class Module implements ModuleInterface
         }
 
         return $this->name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    final public function getNamespace(): string
+    {
+        if (null === $this->namespace) {
+            $pos = strrpos(static::class, '\\');
+            $this->namespace = false === $pos ? '' : substr(static::class, 0, $pos);
+        }
+
+        return $this->namespace;
     }
 }
