@@ -13,6 +13,6 @@ if (!function_exists('module_path')) {
     {
         $repository = app('laravel_modules.repository');
 
-        return $repository->find($name)->getExtraPath($path);
+        return $path ? $repository->find($name)->getExtraPath($path) : $repository->find($name)->getPath();
     }
 }

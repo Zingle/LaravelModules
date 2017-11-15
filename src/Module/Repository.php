@@ -40,7 +40,18 @@ class Repository
         $this->modules[$module->getName()] = $module;
 
         $module->register($this->app);
-        foreach ($module->getProviders() as $provider) {
+        $providers = $module->getProviders();
+        $inferredProvider = sprintf(
+            '%s\Provider\%sServiceProvider',
+            $module->getNamespace(),
+            false !== ($pos = strrpos($module->getName(), 'Module')) ?
+                substr($module->getName(), 0, $pos) : $module->getName()
+        );
+        if (class_exists($inferredProvider)) {
+            array_unshift($providers, $inferredProvider);
+        }
+
+        foreach ($providers as $provider) {
             $this->app->register($provider);
         }
 

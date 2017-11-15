@@ -59,7 +59,7 @@ abstract class Module implements ModuleInterface
      */
     final public function getExtraPath(string $path): string
     {
-        return $this->getPath().$path;
+        return $this->getPath().'/'.$path;
     }
 
     /**
