@@ -47,7 +47,7 @@ class Repository
             false !== ($pos = strrpos($module->getName(), 'Module')) ?
                 substr($module->getName(), 0, $pos) : $module->getName()
         );
-        if (class_exists($inferredProvider)) {
+        if (class_exists($inferredProvider) && !in_array($inferredProvider, $providers)) {
             array_unshift($providers, $inferredProvider);
         }
 
