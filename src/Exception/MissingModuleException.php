@@ -1,6 +1,6 @@
 <?php
 
-namespace ZQuintana\LaravelModules\Exception;
+namespace ZingleCom\LaravelModules\Exception;
 
 /**
  * Class MissingModuleException

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZQuintana\LaravelModules\Module;
+namespace ZingleCom\LaravelModules\Module;
 
 use Illuminate\Contracts\Foundation\Application;
 

@@ -1,14 +1,15 @@
 {
-    "name": "zquintana/laravel-modules",
+    "name": "zingle-com/laravel-modules",
     "description": "Adds Modules to Laravel.",
     "type": "laravel-package",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Zachary Quintana",
-            "homepage": "https://github.com/zquintana/LaravelModules"
-        }
-    ],
+    "authors": [{
+        "name": "Zingle",
+        "homepage": "https://github.com/Zingle/LaravelModules"
+    },{
+        "name": "Zachary Quintana",
+        "homepage": "https://github.com/zquintana"
+    }],
     "require": {
         "php": "~7.0|~7.1"
     },
@@ -17,8 +18,8 @@
     },
     "autoload": {
         "psr-4": {
-            "ZQuintana\\LaravelModules\\Tests\\": "tests",
-            "ZQuintana\\LaravelModules\\": "src"
+            "ZingleCom\\LaravelModules\\Tests\\": "tests",
+            "ZingleCom\\LaravelModules\\": "src"
         },
         "files": [
             "src/helpers.php"

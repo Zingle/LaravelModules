@@ -1,10 +1,10 @@
 <?php
 
-namespace ZQuintana\LaravelModules;
+namespace ZingleCom\LaravelModules;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
-use ZQuintana\LaravelModules\Module\Repository;
+use ZingleCom\LaravelModules\Module\Repository;
 
 /**
  * Class ModuleServiceProvider
