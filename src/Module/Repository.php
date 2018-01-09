@@ -55,6 +55,11 @@ class Repository
             $this->app->register($provider);
         }
 
+        $helpersPath = $module->getExtraPath('helpers.php');
+        if (file_exists($helpersPath)) {
+            require_once $helpersPath;
+        }
+
         return $this;
     }
 
