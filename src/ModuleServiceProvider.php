@@ -2,6 +2,7 @@
 
 namespace ZingleCom\LaravelModules;
 
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use ZingleCom\LaravelModules\Module\Repository;
@@ -37,14 +38,14 @@ class ModuleServiceProvider extends ServiceProvider
      */
     private function registerRepository()
     {
-        $this->app->singleton('laravel_modules.repository', function (Container $container) {
-            $repository = new Repository($container->make('app'));
-            foreach ($container->make('config')->get('modules.modules') as $module) {
-                $repository->register(new $module());
-            }
+        /** @var ConfigRepository $config */
+        $config = $this->app->make('config');
+        $repository = new Repository($this->app);
+        foreach ($config->get('modules.modules') as $module) {
+            $repository->register(new $module());
+        }
 
-            return $repository;
-        });
+        $this->app->singleton('laravel_modules.repository', $repository);
         $this->app->alias('laravel_modules.repository', Repository::class);
 
         return $this;

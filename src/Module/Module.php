@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable Symfony.NamingConventions.ValidClassName.InvalidAbstractName
 
 namespace ZingleCom\LaravelModules\Module;
 
@@ -55,6 +56,7 @@ abstract class Module implements ModuleInterface
 
     /**
      * @param string $path
+     *
      * @return string
      */
     final public function getExtraPath(string $path): string
@@ -87,3 +89,4 @@ abstract class Module implements ModuleInterface
         return $this->namespace;
     }
 }
+// phpcs:enable

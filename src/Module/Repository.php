@@ -18,7 +18,7 @@ class Repository
     /**
      * @var ModuleInterface[]
      */
-    private $modules;
+    private $modules = [];
 
 
     /**
@@ -33,6 +33,7 @@ class Repository
 
     /**
      * @param ModuleInterface $module
+     *
      * @return Repository
      */
     public function register(ModuleInterface $module): Repository
@@ -65,7 +66,9 @@ class Repository
 
     /**
      * @param string $name
+     *
      * @return ModuleInterface
+     *
      * @throws MissingModuleException
      */
     public function find($name): ModuleInterface
@@ -80,7 +83,7 @@ class Repository
     /**
      * @return ModuleInterface[]
      */
-    public function all()
+    public function all(): array
     {
         return $this->modules;
     }

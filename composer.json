@@ -14,7 +14,12 @@
         "php": "~7.0|~7.1"
     },
     "require-dev": {
-        "illuminate/container": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x"
+        "illuminate/container": "5.1.x|5.2.x|5.3.x|5.4.x|5.5.x",
+        "illuminate/support": "^5.5",
+        "illuminate/config": "^5.5",
+        "phpunit/phpunit": "^8.5",
+        "escapestudios/symfony2-coding-standard": "^3.11",
+        "php-coveralls/php-coveralls": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -23,6 +28,15 @@
         },
         "files": [
             "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "test-no-coverage": "@test --no-coverage",
+        "check-standards": "./vendor/bin/phpcs -p",
+        "test-all": [
+            "@check-standards",
+            "@test"
         ]
     }
 }

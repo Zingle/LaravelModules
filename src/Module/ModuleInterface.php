@@ -3,6 +3,7 @@
 namespace ZingleCom\LaravelModules\Module;
 
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Interface ModuleInterface
@@ -12,7 +13,7 @@ interface ModuleInterface
     /**
      * Additional providers to register
      *
-     * @return array
+     * @return array|ServiceProvider[]
      */
     public function getProviders(): array;
 
@@ -20,6 +21,7 @@ interface ModuleInterface
      * Register callback
      *
      * @param Application $app
+     *
      * @return void
      */
     public function register(Application $app);
@@ -33,6 +35,7 @@ interface ModuleInterface
 
     /**
      * @param string $path
+     *
      * @return string
      */
     public function getExtraPath(string $path): string;
