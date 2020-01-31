@@ -20,6 +20,11 @@
     <filter>
         <whitelist>
             <directory>src</directory>
+            <exclude>
+                <file>src/helpers.php</file>
+                <file>src/ModuleServiceProvider.php</file>
+                <directory>src/Exception/</directory>
+            </exclude>
         </whitelist>
     </filter>
 
