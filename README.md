@@ -1,6 +1,9 @@
 Laravel Modules
 ===============
 
+[![Build Status](https://travis-ci.com/Zingle/LaravelModules.svg?branch=master)](https://travis-ci.com/Zingle/LaravelModules)
+[![Coverage Status](https://coveralls.io/repos/github/Zingle/LaravelModules/badge.svg?branch=master)](https://coveralls.io/github/Zingle/LaravelModules?branch=master)
+
 Simple helpers for adding modular architecture to your Laravel project.
 
 # Overview
