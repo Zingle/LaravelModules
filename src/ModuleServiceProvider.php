@@ -45,7 +45,7 @@ class ModuleServiceProvider extends ServiceProvider
             $repository->register(new $module());
         }
 
-        $this->app->singleton('laravel_modules.repository', $repository);
+        $this->app->instance('laravel_modules.repository', $repository);
         $this->app->alias('laravel_modules.repository', Repository::class);
 
         return $this;
